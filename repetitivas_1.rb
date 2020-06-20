@@ -4,4 +4,12 @@
    de  toda del curso y la cantidad de desaprobados que existen 
 =end
 
-nota= [20, 28, 19, 15, 12, 16, 16]
+$nota= [20, 28, 19, 15, 12, 16, 16]
+
+def mostrarElementos
+	for i in 0..5
+		puts "Ubicacion:#{i} -Elemento:#{$nota[i]}"
+	end
+end
+
+mostrarElementos
