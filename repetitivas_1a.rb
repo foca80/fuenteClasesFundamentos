@@ -6,43 +6,43 @@
    Las notas de los alumnos son las siguientes: 20,18,19,10,
    20,11,15
 =end
-$notas = [20, 18, 19, 10, 20, 11, 15]
 
-def calcularSumadeNotas
+def calcularSumadeNotas(notas)
    suma = 0
-   n = $notas.length
+   n = notas.length
    for i in 0..n-1
-   	 suma = suma + $notas[i]
+   	 suma = suma + notas[i]
    end
    return suma
 end
 
-def calcularPromedio
-	return calcularSumadeNotas*1.0/$notas.length
+def calcularPromedio(notas)
+	return calcularSumadeNotas(notas)*1.0/notas.length
 end
-def calcularCantidadDesaprobados
+def calcularCantidadDesaprobados(notas)
    cantidadDesaprobados=0
-   n = $notas.length
+   n = notas.length
    for i in 0..n-1
-   	 if $notas[i]<13
+   	 if notas[i]<13
    	 	cantidadDesaprobados = cantidadDesaprobados + 1
    	 end
    end
    return cantidadDesaprobados    
 end
-def calcularCuantosTienenNota(n)
+def calcularCuantosTienenNota(n, notas)
     cantidad = 0
-    for i in 0..n-$notas.length
-	   	 if $notas[i]==n
+    for i in 0..n-notas.length
+	   	 if notas[i]==n
 	   	 	cantidad = cantidad + 1
 	   	 end
    	end
    return cantidad
 end
 #Test zona
-puts "Suma: #{calcularSumadeNotas}"
-puts "Promedio: #{calcularPromedio.round(2)}"
-puts "Desaprobados: #{calcularCantidadDesaprobados}"
-print "Notas n: ", calcularCuantosTienenNota(20)
+notas = [20, 18, 19, 10, 20, 11, 15]
+puts "Suma: #{calcularSumadeNotas(notas)}"
+puts "Promedio: #{calcularPromedio(notas).round(2)}"
+puts "Desaprobados: #{calcularCantidadDesaprobados(notas)}"
+print "Notas n: ", calcularCuantosTienenNota(20, notas)
 puts
 
