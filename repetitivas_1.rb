@@ -1,14 +1,41 @@
 =begin 
-   Desarrollar un programa tal que sabiendo que se tienen las notas
-   de los alumnos de un curso se pueda saber el primedio de notas 
-   de  toda del curso y la cantidad de desaprobados que existen 
+   Desarrollar un programa que permita calcular el promedio
+   de notas de los alumnos de un curso  y la cantidad
+   de desaprobados que existen.
+   Además mostrar cuantos tiene nota "n"
+   Las notas de los alumnos son las siguientes: 20,18,19,10,
+   20,11,15
 =end
+$notas = [20, 18, 19, 10, 20, 11, 15]
 
-$nota= [20, 28, 19, 15, 12, 16, 16]
-def mostrarElementos
-	for i in 0..$nota.length-1
-		puts "Ubicacion:#{i} -Elemento:#{$nota[i]}"
-	end
+def calcularSumadeNotas
+   suma = 0
+   n = $notas.length
+   for i in 0..n-1
+   	 suma = suma + $notas[i]
+   end
+   return suma
+end
+
+def calcularPromedio
+	return calcularSumadeNotas*1.0/$notas.length
+end
+def calcularCantidadDesaprobados
+   cantidadDesaprobados=0
+   n = $notas.length
+   for i in 0..n-1
+   	 if $notas[i]<13
+   	 	cantidadDesaprobados = cantidadDesaprobados + 1
+   	 end
+   end
+   return cantidadDesaprobados    
+end
+def calcularCuantosTienenNota(n)
+
 end
 #Test zona
-mostrarElementos
+puts "Suma: #{calcularSumadeNotas}"
+puts "Promedio: #{calcularPromedio.round(2)}"
+puts "Desaprobados: #{calcularCantidadDesaprobados}"
+puts calcularCuantosTienenNota(20)
+
