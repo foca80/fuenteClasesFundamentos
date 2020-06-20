@@ -5,11 +5,10 @@
 =end
 
 $nota= [20, 28, 19, 15, 12, 16, 16]
-
 def mostrarElementos
-	for i in 0..5
+	for i in 0..$nota.length-1
 		puts "Ubicacion:#{i} -Elemento:#{$nota[i]}"
 	end
 end
-
+#Test zona
 mostrarElementos
