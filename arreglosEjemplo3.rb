@@ -11,17 +11,26 @@ Escribir un programa que permita:
 =end
 
 def creanuevoArreglo(arreglo1,arreglo2)
- 
+	 arreglo3 =[]  #For anidado		
+     for i in 0..arreglo1.length - 1
+          for j in 0..arreglo2.length - 1
+             if arreglo1[i] == arreglo2[j]
+                arreglo3.push(arreglo1[i])
+             end
+          end
+     end
+     return arreglo3
 end
 
 def cuentaValores(arreglo1,arreglo2)
-	
+	n = creanuevoArreglo(arreglo1, arreglo2).length
+	return n
 end
 
 @arregloA=[10,8,13,15,9,12,3]   
 @arregloB=[3,5,9,15,20]
-@arregloC=[2,7,5,6]
-@arregloD=[]
 
-puts creanuevoArreglo(@arregloA,@arregloB)) 
-puts cuentaValores(@arregloA,@arregloB)) 
+
+print creanuevoArreglo(@arregloA,@arregloB)
+puts
+print "Tamaño:", cuentaValores(@arregloA, @arregloB)
